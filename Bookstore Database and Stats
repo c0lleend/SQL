@@ -1,0 +1,32 @@
+--Create a bookstore database
+
+CREATE TABLE bookstore (id INTEGER PRIMARY KEY, name TEXT, author TEXT, quantity INTEGER, price INTEGER);
+
+INSERT INTO bookstore VALUES (1, "Clockwork Angel", "Cassandra Clare",  5, 11.54);
+INSERT INTO bookstore VALUES (2, "Clockwork Prince", "Cassandra Clare", 7, 9.79);
+INSERT INTO bookstore VALUES (3, "Clockwork Princess", "Cassandra Clare", 6, 13.39);
+INSERT INTO bookstore VALUES (4, "Chain of Gold", "Cassandra Clare", 7, 11.15);
+INSERT INTO bookstore VALUES (5, "Chain of Iron", "Cassandra Clare", 5, 11.54);
+INSERT INTO bookstore VALUES (6, "Chain of Thorns", "Cassandra Clare", 2, 17.38);
+INSERT INTO bookstore VALUES (7, "Beach Read", "Emily Henry", 4, 8.36);
+INSERT INTO bookstore VALUES (8, "Dance of Thieves", "Mary Pearson", 5, 9.34);
+INSERT INTO bookstore VALUES (9, "Love and Other Words", "Christina Lauren", 3, 9.98);
+INSERT INTO bookstore VALUES (10, "The Maddest Obsession", "Danielle Lori", 1, 12);
+INSERT INTO bookstore VALUES (11, "A Court of Mist and Fury", "Sarah J. Maas", 5, 12.49);
+INSERT INTO bookstore VALUES (12, "King of Scars", "Leigh Bardugo", 3, 10);
+INSERT INTO bookstore VALUES (13, "Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 6, 6.98);
+INSERT INTO bookstore VALUES (14, "Throne of Glass", "Sarah J. Maas", 3, 8.49);
+INSERT INTO bookstore VALUES (15, "Mother of Death and Dawn", "Carissa Broadbent", 2, 14);
+
+--display the database ordered by price
+SELECT * FROM bookstore 
+ORDER BY price;
+
+--what is the total number of books in the store?
+SELECT SUM(quantity) "Total Books in Stock"
+FROM bookstore;
+
+--which books have quantities of 3 or less?
+SELECT * FROM bookstore
+WHERE quantity <= 3
+ORDER BY quantity; 
